@@ -1,0 +1,19 @@
+<view class='c mrgTop30'>
+  <navigator class='navigatorBoder c' url="../changepd/changepd">
+    <view class='tarInput'>
+      <text>修改密码</text>
+      <text class='iconfont icon-right setting-icon lastText'></text>
+    </view>
+  </navigator>
+  <navigator class='navigatorBoder c' url="../aboutus/aboutus">
+    <view class='tarInput'>
+      <text>关于我们</text>
+      <text class='iconfont icon-right setting-icon lastText'></text>
+    </view>
+  </navigator>
+</view>
+<!--设置-->
+
+  <view class='box loginOut-btn mrgTop30' bindtap='loginOut'>
+    退出登录
+  </view>

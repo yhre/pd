@@ -1,0 +1,76 @@
+{
+  "pages": [
+    "page/index/index",
+    "page/order/order",
+    "page/manageaddress/manageaddress",
+    "page/selectaddress/selectaddress",
+    "page/login/login",
+    "page/addaddress/addaddress",
+    "page/loaning/loaning",
+    "page/allzp/allzp",
+    "page/allzpxq/allzpxq",
+    "page/register/register",
+    "page/fogetpd/fogetpd",
+    "page/changepd/changepd",
+    "page/person/person",
+    "page/personinfo/personinfo",
+    "page/agree/agree",
+    "page/aboutus/aboutus",
+    "page/fsperson/fsperson",
+    "page/orderxq/orderxq",
+    "page/score/score",
+    "page/editaddress/editaddress",
+    "page/loaningxq/loaningxq",
+    "page/cpxq/cpxq",
+    "page/pdlogin/pdlogin",
+    "page/zpprovince/zpprovince",
+    "page/zpcity/zpcity",
+    "page/changemarket/changemarket",
+    "page/changename/changename",
+    "page/province/province",
+    "page/address/address",
+    "page/picker/picker",
+    "page/city/city",
+    "page/changephone/changephone",
+    "page/setting/setting"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "登录",
+    "navigationBarBackgroundColor": "#4AACE2",
+    "backgroundColor": "#efeff4"
+  },
+  "tabBar": {
+    "color": "#979797",
+    "backgroundColor": "#fff",
+    "selectedColor": "#FF6600 ",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "page/index/index",
+        "text": "首页",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/indexcl.png"
+      },
+      {
+        "pagePath": "page/allzp/allzp",
+        "text": "资方",
+        "iconPath": "images/zp.png",
+        "selectedIconPath": "images/zpcl.png"
+      },
+      {
+        "pagePath": "page/order/order",
+        "text": "订单",
+        "iconPath": "images/order.png",
+        "selectedIconPath": "images/ordercl.png"
+      },
+      {
+        "pagePath": "page/person/person",
+        "text": "我的",
+        "iconPath": "images/per.png",
+        "selectedIconPath": "images/percl.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

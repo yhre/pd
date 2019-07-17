@@ -1,0 +1,78 @@
+<view class='loan-con loan-consp' wx:for="{{scorelist}}" data-index='{{parentindex}}' wx:for-index="parentindex" wx:key=''>
+  <view class="fspersonhead bgnone">{{item.loanName}}</view>
+  <view class="scoreTop">
+    <view class='imgbox'>
+      <image src="/images/logo.png" class="fsimg" mode='widthFix'></image>
+    </view>
+    <view class="fsperson-container">
+      <view class="starall">
+        <text>张先生</text>
+        <block wx:for="{{item.salemanStar}}" wx:key="{{index}}">
+          <image src='/images/starcl.png' class='star' mode='widthFix'></image>
+        </block>
+        <block wx:for="{{5-item.salemanStar}}" wx:key="{{index}}">
+          <image src='/images/star.png' class='star' mode='widthFix'></image>
+        </block>
+      </view>
+      <view class='color97'>办单效率：{{item.efficiencyStar}} 服务态度：{{item.attitudeStar}} 业务能力：{{item.abilityStar}}</view>
+      <view class='color97'>{{item.salemanStar}}年从业经验，已办理{{item.orderNum}}单</view>
+    </view>
+  </view>
+  <view class="scoreBot scoreConrating ">
+    <view class="startP rating1">
+      <view class="spanTitle">总体：</view>
+      <view class="starall">
+        <block wx:for="{{item.st1starone}}" wx:key="index">
+          <image bindtap="st1select" id='{{index+1}}' data-in='use_sc2' src='/images/starcl.png' class='star' data-index='{{index}}' data-parentIndex='{{parentindex}}'></image>
+        </block>
+        <block wx:for="{{item.st1startwo}}" wx:key="index">
+          <image bindtap="st1select" id='{{index+1}}' data-in='use_sc' src='/images/star.png' class='star' data-index='{{index}}' data-parentIndex='{{parentindex}}'></image>
+        </block>
+      </view>
+      <view class="mgl10 dir">{{item.st1startext}}</view>
+    </view>
+    <view class="startP rating1 {{item.show?'show':'hide'}}">
+      <view class="spanTitle">办单效率：</view>
+      <view class="starall">
+        <block wx:for="{{item.st2starone}}" wx:key=''>
+        <!-- currentTabsIndex==key?'selected':'' -->
+          <image catchtap="st2select" id='{{index+1}}' data-in='use_sc2' src='/images/starcl.png' class='star' data-index='{{index}}' data-parentIndex='{{parentindex}}'></image>
+        </block>
+        <block wx:for="{{item.st2startwo}}" wx:key="index" wx:key=''>
+          <image catchtap='st2select' id='{{index+1}}' data-in='use_sc' src='/images/star.png' class='star' data-index='{{index}}'  data-parentIndex='{{parentindex}}'></image>
+        </block>
+      </view>
+      <view class="mgl10 dir">{{item.st2startext}}</view>
+    </view>
+    <view class="startP rating1 {{item.show?'show':'hide'}}">
+      <view class="spanTitle">服务态度：</view>
+      <view class="starall">
+        <block wx:for="{{item.st3starone}}" wx:key="index">
+          <image catchtap='st3select' id='{{index+1}}' data-in='use_sc2' src='/images/starcl.png' class='star' data-index='{{index}}' data-parentIndex='{{parentindex}}'></image>
+        </block>
+        <block wx:for="{{item.st3startwo}}" wx:key="index">
+          <image catchtap='st3select' id='{{index+1}}' data-in='use_sc' src='/images/star.png' class='star' data-index='{{index}}' data-parentIndex='{{parentindex}}'></image>
+        </block>
+      </view>
+      <view class="mgl10 dir">{{item.st3startext}}</view>
+    </view>
+   <view class="startP rating1 {{item.show?'show':'hide'}}">
+      <view class="spanTitle">业务能力：</view>
+      <view class="starall">
+        <block wx:for="{{item.st4starone}}" wx:key="index">
+          <image catchtap='st4select' id='{{index+1}}' data-in='use_sc2' src='/images/starcl.png' class='star' data-index='{{index}}' data-parentIndex='{{parentindex}}'></image>
+        </block>
+        <block wx:for="{{item.st4startwo}}" wx:key="index" wx:key=''>
+          <image catchtap='st4select' id='{{index+1}}' data-in='use_sc' src='/images/star.png' class='star' data-index='{{index}}' data-parentIndex='{{parentindex}}'></image>
+        </block>
+      </view>
+      <view class="mgl10 dir">{{item.st4startext}}</view>
+    </view>
+  </view>
+  <!--意见输入框  -->
+  <textarea placeholder='服务专员的级别由你来决定，所有评分匿名提交，不会展示给服务专员' class='scorderTextarea' bindinput='scorderTextarea' data-index='{{parentindex}}'></textarea>
+</view>
+
+<view class="h-box c"></view>
+
+<view class="adressBtn" data-id="score" bindtap='scoreBtn'>提交</view>

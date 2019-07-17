@@ -1,0 +1,4 @@
+/* page/aboutus/aboutus.wxss */
+page{
+  background: #fff;
+}

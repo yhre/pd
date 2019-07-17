@@ -1,0 +1,15 @@
+<view class='c'>
+    <picker class='tarPicker' bindchange='bindPickerChange' value="{{index}}" range="{{array}}">
+    <view class='tarInput'>
+      <text>地区</text>
+      <view class='lastText color97'>
+      <text class='margRight20'>{{array[index]}}</text>
+      <text class='iconfont icon-right setting-icon'></text>
+      </view>
+    </view>
+    </picker> 
+   <view class='tarInput'>
+      <text>车行</text>
+      <input type='text' placeholder='请输入车行名称' class='textRight' bindinput='bindcarname' value='{{cardealer}}'></input>
+    </view>
+</view>

@@ -1,0 +1,11 @@
+
+<view class="viewbox" wx:for='{{addressList}}' wx:key='' bindtap='urlLoaning' data-index='{{index}}'>
+    <view><text>{{item.name}}</text><text class="fr">{{item.phone}}</text></view>
+    <view class="lastp">{{item.fullAddress}}</view>
+</view>
+<view class="h-box c"></view>
+<view class="infoButtom infoButtomfixed">
+    <view class="infoButtomleft" bindtap='adressBtn'>添加新联系地址</view>
+    <view class="line"></view>
+    <view class="infoButtomright" bindtap='mangeBtn'>管理地址</view>
+</view>

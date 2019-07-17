@@ -1,0 +1,39 @@
+<view class="divbox managediv" wx:for='{{addressList}}' wx:key="">
+  <view class="manageBox">
+    <view>
+      <text>{{item.name}}</text>
+      <text class="fr">{{item.phone}}</text>
+    </view>
+    <view class="lastp">{{item.fullAddress}}</view>
+  </view>
+  <view class="manageBox-bottom">
+    <view class="fl text-last">
+        <checkbox-group class="radio-group fl" bindtap="checkboxChange" data-index="{{index}}" data-addressid='{{item.id}}' data-marketid='{{item.marketId}}'>
+          <label class="checkbox">
+            <!-- wx:for="{{item.list}}" wx:for-item='item2' wx:key="index" -->
+            <checkbox value="{{item.defaultAddress}}" hidden='ture' />
+            <block wx:if="{{item.defaultAddress}}">
+            <image class='select' src='/images/01.png'></image>
+            </block>
+            <block wx:else>
+              <image class='select' src='/images/02.png'></image>
+            </block>
+          </label>
+        </checkbox-group>
+      <text class="color1b mgl10">默认地址</text>
+    </view>
+    <view class="fr managedit color4a">
+      <view class="edit fl" bindtap='edit' data-index='{{index}}'>
+        <image src="https://g.bjesc.cn/sp/img/edit.png" class='dtimg' mode='widthFix'></image>
+        <text class="mgl5">编辑</text>
+      </view>
+      <view class="mgl30 delete fl" bindtap='delete' data-id='{{item.id}}' data-index='{{index}}'>
+        <image src="https://g.bjesc.cn//sp/img/delete.png" class='dtimg' mode='widthFix'></image>
+        <text class="mgl5">删除</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="h-box c"></view>
+<view class="adressBtn" bindtap='adressBtn'>添加新联系地址</view>

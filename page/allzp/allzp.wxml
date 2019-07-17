@@ -1,0 +1,31 @@
+<view class="present-ad c">
+  定位到的位置</view>
+<view class='c box' bindtap='urlProvice'>
+  <view class='tarInput'>
+    <image src='/images/icon-ad.png' class='icon-ad'></image>
+    <text class='mrgLeft15'>{{province}}   {{city}}</text>
+  </view>
+</view>
+<!--设置-->
+<view class='nozp' wx:if='{{show}}'>
+  <image src="/images/noZp.png" class='nozpimg' mode='widthFix'></image>
+  <view class='textTip bgnone color97'>当前城市暂无资方</view>
+</view>
+<!-- <scroll-view class='zpCon c bgnone' scroll-y="true"> -->
+  <view class='bgnone' >
+    <!-- <view class='tarInput w750 textIndent30 borderTop'>
+      {{item.type}}
+    </view> -->
+    <view class='zpSort c'>
+      <view class="zp-list" bindtap='urlZpxq' data-index='{{index}}' wx:for='{{zplist}}' wx:key="{{index}}">
+        <view class='boxList'>
+          <image src="{{item.logo}}" class="zp-sort-img fl" mode='widthFix'></image>
+          <view class="zp-list-text fl">
+            <text class="">{{item.name}}</text>
+            <text class="font22 color97">{{item.desc}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+<!-- </scroll-view> -->

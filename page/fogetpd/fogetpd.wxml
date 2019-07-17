@@ -1,0 +1,26 @@
+<!--输入框部分  -->
+<view class='c containerInput'>
+  <view class='tarInput w750 colorGrey bgGrey'>
+    <text>为保证账号安全，请找回密码</text>
+  </view>
+  <view class='tarInput'>
+    <text>手机号</text>
+    <input type='number' placeholder='请输入手机号' bindinput='bindphoneInput' value='{{phone}}'></input>
+  </view>
+  <view class='tarInput codeInput'>
+    <text>验证码</text>
+    <input type='number' placeholder='请输入验证码' bindinput="bindcodeInput" value='{{code}}'></input>
+    <view class="code {{is_show?'show':'hide'}}" bindtap="clickVerify">获取验证码</view>
+    <view class="code code-grey {{is_show?'hide':'show'}}">重新发送{{last_time}}秒</view>
+  </view>
+  <view class='tarInput'>
+    <text>新密码</text>
+    <input type='password' password='' placeholder='6-16位' bindinput="bindpdInput" value='{{pwd}}'></input>
+  </view>
+  <view class='tarInput'>
+    <text>确认密码</text>
+    <input type='password' password='' placeholder='请再一次输入密码' bindinput='bindrepwdInput' value='{{repwd}}'></input>
+  </view>
+</view>
+<!--登录按钮  -->
+   <button class='btn' bindtap="checkLogin">提交</button> 

@@ -1,0 +1,10 @@
+<view class='mark-like' bindtap='tapMark' >
+  <block wx:for="{{range}}" wx:key='index'>
+      <image wx:if="{{mark>=index+1}}" 
+          src='/images/starcl.png'
+          data-mark="{{index+1}}" class='star' style="width:50rpx;height:50rpx"></image>
+      <image wx:if="{{mark<index+1}}" 
+          src='/images/star.png'
+          data-mark="{{index+1}}" class='star' style="width:50rpx;height:50rpx"></image>
+  </block>
+</view>

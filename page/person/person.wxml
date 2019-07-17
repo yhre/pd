@@ -1,0 +1,28 @@
+<view class="person-head personInfo" bindtap='urlPersoninfo'>
+    <image src='/images/person.png' class='personImg'></image>
+     <block wx:if="{{name!=''}}">
+    <text class='personName'>{{name}}</text>
+    </block>
+    <block wx:else>
+    <text class='personName'>{{phone}}</text>
+    </block>
+    <text class='iconfont icon-right personRight-icon'></text>
+</view>
+
+<view class='c mrgTop30'>
+  <view class='tarInput codeInput'>
+    <text>联系方式</text>
+    <view class='lastText colorOrange'>
+     <image src='/images/phone.png' class='phoneImg fl'></image> 
+     <text class='fl'>{{phone}}</text>
+    </view>
+  </view>
+</view>
+ <!--设置-->
+ <navigator class='avigatorSetLink c mrgTop30' url="../setting/setting">
+  <view class='tarInput'>
+    <text>设置</text>
+     <text class='iconfont icon-right setting-icon lastText'></text>
+  </view>
+</navigator>
+ 

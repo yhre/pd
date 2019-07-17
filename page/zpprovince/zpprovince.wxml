@@ -1,0 +1,16 @@
+<view class="present-ad c">定位到的位置</view>
+<view class='c box'>
+  <view class='tarInput'>
+    <image src='/images/icon-ad.png' class='icon-ad'></image>
+    <text class='mrgLeft15'>{{province}}   {{city}}</text>
+  </view>
+</view>
+<view class="present-ad c" bindtap='bindtest'>全部</view>
+<view class='c containerInput'>
+   <view class="tarInput {{currentTabsIndex==key?'selected':''}}" wx:for="{{pro}}" wx:key="{{index}}" wx:for-index="key" data-index='{{key}}' data-text='{{item.name}}' bindtap='choProvice' data-provinceid='{{item.code}}'>
+    <text>{{item.name}}</text>
+   <view class='lastText'>
+      <text class="iconfont tick-icon"></text>
+    </view>
+  </view> 
+</view>

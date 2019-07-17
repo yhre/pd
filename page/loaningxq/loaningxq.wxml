@@ -1,0 +1,96 @@
+
+ <view class="section section_gap">
+             <text class="section__title">最高可返利10个点</text> 
+            <view class="body-view">
+            <!-- <text class='frist'>1</text> -->
+                <slider bindchanging="bindchanging" selected-color="#FF6600" value='{{rebateVal}}' min="0" max="{{rebateVal}}" show-value />
+            <!-- <text class='last'>10</text> -->
+            </view>
+ </view>
+<view class="c mrg30">
+    <view class="infotitle">
+        <text>基本信息</text>
+    </view>
+    <view class="info clear">
+        <view class="infolist infolist1">
+            <view>
+                <text class="color97">成交价</text><text class="colorOrange">{{carPrice}}万</text>
+            </view>
+            <view>
+                <text class="color97">预估首付</text><text class="colorOrange">{{firstPrice}}万</text>
+            </view>
+            <view>
+                <text class="color97">预估月供</text><text class="colorOrange">{{monthPrice}}元</text>
+            </view>
+            <view>
+                <text class="color97">可增容</text><text class="colorOrange">{{rebatePrice}}元</text>
+            </view>
+            <view>
+                <text class="color97">期数</text><text class="colorOrange">{{months}}期</text>
+            </view>
+             <view>
+                <text class="color97">月利率</text><text class="colorOrange">{{calcPer}}%</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="c mrg30">
+    <view class="infotitle">
+        <text>代收项目</text>
+    </view>
+        <view class="infolist Input">
+            <view class="infoInput">
+                <text>金融手续费：</text>
+                <input type="number"  maxlength="11" id="userphone" autofocus="autofocus" bindinput='jrpruice'></input>
+                <text class='yuan'>元</text>
+            </view>
+             <view class="infoInput">
+                <text>GPS：</text>
+                <input type="number"  maxlength="11" id="userphone" bindinput='gps' ></input>
+                <text class='yuan'>元</text>
+                <text class="last">(需加成本200元）</text>
+            </view>
+            <view class="infoInput">
+                <text>其它：</text>
+                <input type="text" maxlength="11" id="userphone" bindinput='other'></input>
+            </view> 
+        </view>
+</view>
+<view class="mrg30 c">
+    <view class="infotitle">
+        <text>所需资料</text>
+    </view>
+        <view class="infolist material">
+            <view wx:for='{{fundDemand}}' wx:key="">
+            {{item}}
+            </view>
+        </view>
+</view>
+<view class="mrg30 c">
+    <view class="infotitle">
+        <text>办理流程(上门服务)</text>
+    </view>
+    <view class="info clear">
+        <view class="infolist">
+            <image src="{{processImg}}" class='bllc' mode='widthFix'></image>
+        </view>
+    </view>
+</view>
+<view class="mrgTop30 c">
+    <view class="infotitle border-bottom-none">
+        <text>备注</text>
+    </view>
+    
+        <view class="infolist">
+            <textarea class="infoText" bindinput='tipsInput'></textarea>
+        </view>
+   
+</view>
+<view class="kfphone">
+        <view class='bgnone'>联系客服：4006-800-978<text class="iconfont icon-phone mgl10 colorOrange"></text></view>
+</view>
+<view class="infoButtom">
+    <view class="infoButtomleft" bindtap='urlxuan'>添加备选</view>
+    <view class="line"></view>
+    <view class="infoButtomright" bindtap='submitxuan'>提交</view>
+</view>

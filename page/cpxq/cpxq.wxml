@@ -1,0 +1,56 @@
+<!-- <view class="loaning-head border-bottom pdBottomnone">
+  <view class="achievement">
+    <view class="number-inspected">
+      <view class="text" id="mechanism">三方测评</view>
+      <text class="yuan" id="goal">300</text>
+    </view>
+    <view class="number-inspected">
+      <view class="" id="mechanism">信誉度</view>
+      <text class="yuan" id="goal">良好</text>
+    </view>
+  </view>
+</view>
+<view class='tableCon bgnone'>
+  <view class='table bgnone'>
+    <view class='thead bgnone'>个人基本信息</view>
+    <view class='tbody'>
+      <view class='tr'>姓名：{{name}}</view>
+      <view class='tr'>手机号：{{phone}}</view>
+      <view class='tr'>身份证号码：{{idCard}}</view>
+      <view class='tr'>身份证所属地：{{idCardAddress}}</view>
+      <view class='tr'>手机所属地：{{phoneAddress}}</view>
+    </view>
+  </view>
+    <view class='table bgnone'>
+    <view class='thead bgnone'>贷前风险情况</view>
+    <view class='tbody' wx:for='{{risk}}' wx:key=''>
+      <view class='tr'>{{item.name}} 
+      <image src='{{item.desc}}' class='checkdesc' mode='widthFix'></image>
+       </view>
+    </view>
+  </view>
+   <view class='table bgnone'>
+    <view class='thead bgnone'>个人基本信息核查</view>
+    <view class='tbody last'>
+      <view class='tr'>
+      <view class='td tdfirst'>检查项目</view>
+      <view class='td tdlast'>身份证命中法院名单</view>
+      </view>
+      <view class='tr'>
+      <view class='td tdfirst'>风险等级</view>
+      <view class='td tdlast'>高</view>
+      </view>
+      <view class='tr trlast'>
+       <view class='td tdfirst'>备注</view>
+       <view class='list td tdlast'>
+       <view class=''>规则描述:身份证命中法院名单哈哈哈哈哈哈或或</view>
+       <view class='colorOrange'>风险类型:法院结案</view>
+       <view class='colorOrange'>匹配字段:借款人身份证</view>
+       </view>
+      </view>
+     
+    </view>
+  </view>
+</view> -->
+
+<web-view src="{{url}}"></web-view>

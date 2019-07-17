@@ -1,0 +1,31 @@
+<view>
+  <image src='/images/banner.jpg' class='banner c' mode='widthFix'></image>
+</view>
+<view class="c indexInput">
+  <view class='tarInput'>
+    <text class='textleft'>客户姓名</text>
+    <input type='text' placeholder='请输入客户姓名' bindinput='bindnameInput' value='{{name}}' maxlength="11"></input>
+  </view>
+  <view class="tarInput">
+    <text class='textleft'>车辆成交价</text>
+    <input type="digit" placeholder="请输入贷款金额" maxlength="11" id="loan_price" bindinput='bindpriceInput' value='{{price}}'></input>
+    <text class="je-text">万</text>
+  </view>
+  <view class="tarInput yzmInput">
+    <text class='textleft'>身份证号码</text>
+    <input type="idcard" placeholder="请输入身份证号码" maxlength="18" id="id_card" bindinput='bindcardInput' value='{{card}}'></input>
+  </view>
+  <view class="tarInput yzmInput">
+    <text class='textleft'>客户手机号</text>
+    <input type="number" placeholder="请输入11位手机号" id="tou_phone" maxlength="11" bindinput='bindphoneInput' value='{{phone}}'></input>
+  </view>
+  <view class='tarInput codeInput'>
+    <text class='textleft'>验证码</text>
+    <input type='text' placeholder='请输入验证码' bindinput="bindcodeInput" value='{{code}}'></input>
+    <view class="code {{is_show?'show':'hide'}}" bindtap="clickVerify">获取验证码</view>
+    <view class="code code-grey {{is_show?'hide':'show'}}">重新发送{{last_time}}秒</view>
+  </view>
+</view>
+
+<!--登录按钮  -->
+<button class='btn indexLogin' bindtap="checkLogin" data-type='1'>预审批</button> 

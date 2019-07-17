@@ -1,0 +1,18 @@
+<!--page/address/address.wxml-->
+<view class='c mrgTop30'>
+<navigator class='' url='../province/province'>
+    <view class='tarInput borderColor'>
+      <text>地区</text>
+      <view class='lastText color97'>
+      <text class='margRight20'>{{province}}  {{city}}</text>
+      <text class='iconfont icon-right setting-icon'></text>
+    </view>
+    </view>
+  </navigator>   
+   <view class='tarInput'>
+      <text>详细地址</text>
+      <input type='text' placeholder='请输入详细地址' class='textRight' value='{{addressxs}}' bindinput='addressxsInput'></input>
+    </view>
+   
+</view>
+<!--设置-->

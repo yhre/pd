@@ -1,0 +1,39 @@
+<view class='loan-con loan-consp' wx:for='{{personList}}' wx:key='' data-index="{{parentsindex}}" wx:for-index="parentsindex">
+  <view class="fspersonhead bgnone">{{item.loanName}}</view>
+  <view class="fsperson-line c" wx:for='{{item.saleman}}' wx:for-item="items" wx:key=''>
+    <checkbox-group class="radio-group checkbox-group-fsperson" bindtap="checkboxChange" data-index="{{index}}" data-parentsindex='{{parentsindex}}' data-fundId='{{items.fundId}}'>
+      <label class="checkbox fscheckbox">
+        <checkbox value="{{items.checked?1:0}}" hidden='true' />
+          <block wx:if="{{items.checked}}">
+            <image class='select' src='/images/01.png'></image>
+          </block>
+          <block wx:else>
+            <image class='select' src='/images/02.png'></image>
+          </block>
+      </label>
+    </checkbox-group>
+    <view class="fsperson-l">
+      <image src="{{items.avatar}}" class="fsimg" mode='widthFix'></image>
+      <view class="fsperson-container">
+        <view class="starall">
+          <text>{{items.name}}</text>
+           <block wx:for="{{items.star}}" wx:key="{{index}}">
+          <image src='/images/starcl.png' class='star' mode='widthFix'></image>
+        </block>
+        <block wx:for="{{5-items.star}}" wx:key="{{index}}">
+          <image src='/images/star.png' class='star' mode='widthFix'></image>
+        </block>
+        </view>
+        <view>办单效率：{{items.efficiencyStar}} 服务态度：{{items.attitudeStar}} 业务能力：{{items.abilityStar}}</view>
+        <view>{{items.workAge}}年从业经验，已办理{{items.orderNum}}单</view>
+      </view>
+    </view>
+  </view>
+ 
+</view>
+<view class="h-box c"></view>
+<view class="infoButtom infoButtomsp">
+    <view class="infoButtomleft infoButtomleftsp" bindtap='cancal'>取消</view>
+    <view class="line"></view>
+    <view class="infoButtomright" bindtap='confirm'>确定</view>
+</view>

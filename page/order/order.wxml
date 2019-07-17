@@ -1,0 +1,89 @@
+<scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+  <view class="tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="swichNav">全部</view>
+  <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">未匹配</view>
+  <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">待提审</view>
+  <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">待审核</view>
+  <view class="tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="swichNav">已通过</view>
+  <view class="tab-item {{currentTab==5?'active':''}}" data-current="5" bindtap="swichNav">已拒绝</view>
+   <view class="tab-item {{currentTab==6?'active':''}}" data-current="6" bindtap="swichNav">已放款</view>
+</scroll-view>
+<swiper class="tab-content c" current="{{currentTab}}" duration="300" bindchange="switchTab" scroll-y="true">
+
+  <swiper-item wx:for="{{[0,1,2,3,4,5,6]}}" wx:key=''>
+     <loading hidden="{{hidden}}" bindchange="loadingChange">
+      加载中
+    </loading> 
+      <scroll-view scroll-y="true" class="scoll-h" bindscrolltolower="loadMore" bindscrolltoupper="refesh">  
+      <block wx:for="{{orderlist}}" wx:key="" wx:for-index="{{index}}">
+        <view class='list' bindtap='urlOrderxq' data-order='{{item.id}}' data-status='{{item.status}}'>
+          <view class="order-list">
+            <view class="zpxq-list">
+              <image src="{{item.fund.logo}}" class="zpxq-sort-img fl" mode='widthFix'></image>
+              <view class="zpxq-list-text fl">
+                <view class="font34 colorblue">{{item.fund.name}}</view>
+                <view class="font22 color97">贷款人：{{item.name}}</view>
+              </view>
+              <view class="order-rsp">{{item.statusDesc}}</view>
+            </view>
+            <view class="order-sum c">
+              <view class="corder-sum-link">
+                <view>贷款金额</view>
+                <view class="font34 color-orange">{{item.price}}</view>
+              </view>
+              <view class="corder-sum-link">
+                <view>月供</view>
+                <view class="font34 color-orange">0.00</view>
+              </view>
+              <view class="corder-sum-link">
+                <view>首付</view>
+                <view class="font34 color-orange">{{item.firstPrice}}</view>
+              </view>
+            </view>
+
+          </view>
+        </view>
+      </block>
+       <view class="nodata"> 
+        <view wx:if='{{nodata}}' class='nodata bgnone'>
+        <view class='noorder'>
+        <image src="/images/noOrder.png" class='nozpimg' mode='widthFix'></image>
+        <view class='textTip bgnone color97'>暂无订单</view>
+        </view>
+        </view>
+        <view wx:else>
+          <view class="tips1">
+            <view wx:if="{{hasMore}}">
+              <view class="load-more clearfix">
+                <view class="spinner fl">
+                  <view class="spinner-container container1">
+                    <view class="circle1"></view>
+                    <view class="circle2"></view>
+                    <view class="circle3"></view>
+                    <view class="circle4"></view>
+                  </view>
+                  <view class="spinner-container container2">
+                    <view class="circle1"></view>
+                    <view class="circle2"></view>
+                    <view class="circle3"></view>
+                    <view class="circle4"></view>
+                  </view>
+                  <view class="spinner-container container3">
+                    <view class="circle1"></view>
+                    <view class="circle2"></view>
+                    <view class="circle3"></view>
+                    <view class="circle4"></view>
+                  </view>
+                </view>
+                <view class="load-cont fl">加载中...</view>
+              </view>
+            </view>
+            <view wx:else>
+              <view class='lastdata'>已经到底了</view>
+            </view>
+          </view>
+        </view>
+        
+       </view> 
+      </scroll-view>  
+  </swiper-item>
+</swiper>

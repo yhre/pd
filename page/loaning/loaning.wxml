@@ -1,0 +1,110 @@
+<view class="loaning-head border-bottom">
+  <view class="achievement">
+    <view class="number-inspected" wx:for='{{headlist}}' wx:key=''>
+      <view class="text" id="mechanism">{{item.title}}</view>
+      <text class="yuan" id="goal">{{item.desc}}</text>
+    </view>
+   
+  </view>
+  <view class="btn-cpdetail" bindtap='urlcpxq'>测评详情 </view>
+</view>
+ <!--地址展示-->
+    <block wx:if="{{!!addressList}}">
+    <navigator class="address" url='../selectaddress/selectaddress'>
+        <image src="/images/icon-ad1.png" class="address-icon" mode='widthFix'></image>
+        <view class="ad-text">
+           <view>联系人：{{adName}}  <text>{{adNnmber}}</text></view>
+          <view>联系地址：{{fullAddress}}</view>
+        </view>
+        <text class="iconfont icon-right"></text>
+    </navigator>  
+    </block>
+     <block wx:else>
+    <navigator class="address" url='../addaddress/addaddress?url=loaning'>
+            <image src="/images/icon-ad1.png" class="address-icon" mode='widthFix'></image>
+            <view class="ad-text">
+                <view>请添加联系地址，便于服务专员联系你！</view>
+            </view>
+            <text class="iconfont icon-right"></text>
+        </navigator>  
+    </block> 
+
+<!--地址展示end-->
+<view class="has bgnone" style="display: block;">
+  <view class="loging-nav c">
+    <view class="change-eleven sort-integrative '{{statetop?'selected':''}}'" bindtap='changeFq'>
+      <text class='qs'>{{Fqvalue}}期</text>
+      <text class='sececticon'></text>
+    </view>
+    <view class="change-eleven sortList '{{indexItem==index?'active':''}}'" bindtap='changeSf' data-atr="{{item.atr}}" wx:for="{{itemList}}" data-index="{{index}}" wx:key="{{index}}" data-desc='{{item.sc}}'>
+             <text class="arrow-up">{{item.name}}</text>
+            <text class="sececticon {{stateAtr&&indexItem==index?'active':''}}"></text>
+    </view>
+   
+  </view>
+  <view class="loan-con c" id="loan_stages">
+    <view class="loaning-container c " wx:for="{{zplist}}" wx:key="{{index}}" wx:if="{{!!item}}">
+      <!-- <view wx:for="{{item.list}}" wx:for-item='items' wx:key="{{index}}" wx:if="{{!!items}}">
+      <view>{{items.name}}hahh</view>
+    </view> -->
+      <checkbox-group class="radio-group checkbox-group-loaning" bindtap="checkboxChange" data-index="{{index}}">
+        <label class="checkbox">
+          <!-- wx:for="{{item.list}}" wx:for-item='item2' wx:key="index" -->
+          <checkbox value="{{item.checked?1:0}}" hidden='true' />
+          <block wx:if="{{item.checked}}">
+            <image class='select' src='/images/01.png'></image>
+          </block>
+          <block wx:else>
+            <image class='select' src='/images/02.png'></image>
+          </block>
+        </label>
+      </checkbox-group>
+      <view class="loaning-l" bindtap='urlLoaning' data-index='{{index}}'>
+        <view class="bank-name">
+          <image src="{{item.logo}}" class='bankImage' mode='widthFix'></image>
+          <view>{{item.name}}</view>
+        </view>
+        <view class="bank-container">
+          <view class='color97'>首付:
+            <text class="colorOrange">{{item.firstPrice}}万</text>
+          </view> 
+          <view class='color97'>月供:
+            <text class="colorOrange">{{item.monthPrice}}元</text>
+          </view>
+        </view>
+        <view class="bank-lx">
+          <view class='color97'>利率:
+            <text class="colorOrange">{{item.monPer}}%</text>
+            
+          </view>
+          <view class='color97'>可增融:
+            <text class="colorOrange">{{item.rebatePrice}}</text>
+          </view>
+        </view>
+        <view class="sx {{item.checked?'selected':''}}">
+          <text class="colorblue">
+          <block wx:if="{{item.sort>1}}">
+           <text class="countspan">备选{{item.sort-1}}</text>
+          </block>
+          <block wx:else>
+            <text class="countspan">首选</text>
+          </block> 
+           <!-- <text class="countspan">{{item.sort}}</text>  -->
+          </text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view class='hbox'></view>
+  <view class="loaning-btn" bindtap='urlLoaningxq'>提交</view>
+</view>
+<!--未找到合适的分期渠道-->
+<view class="no" style="display: none">
+  未匹配到合适的分期渠道
+</view>
+<!--分期弹窗  -->
+<view class="windownFq '{{stateFq?'show':'hide'}}'" >
+  <view bindtap='changeFq' wx:for="{{arrqs}}" data-index='{{index}}' wx:key='{{index}}' data-text='{{item.name}}'><text>{{item.name}}期</text>
+  <text class="iconfont tick-icon {{currentTabsIndex==index?'show':'hide'}}" data-index='{{index}}'></text></view>
+</view>

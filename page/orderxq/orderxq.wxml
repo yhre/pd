@@ -1,0 +1,20 @@
+<view class='mrg30 c'>
+  <view class='tarInput'>
+    <text>{{headerDesc}}</text>
+  </view>
+</view>
+
+<view class="orderxq-container">
+  <view class="order-step" wx:for="{{infolist}}" wx:key="" data-index='{{index}}'>
+    <view class="circle"></view>
+    <view class="orderxq-text">
+      <view>
+        <view>{{item.type}}</view>
+      </view>
+      <view>{{item.addTime}}</view>
+    </view>
+  </view>
+  
+</view>
+<view class="horderxq-box c"></view>
+<view class="adressBtn mrgTop30 {{show?'hide':'show'}}" data-id="score" bindtap='scoreBtn'>去评价</view>

@@ -1,0 +1,45 @@
+<!--page/allzpxq/allzpxq.wxml-->
+<view class="selectarea">
+  <view class="zpxq-list">
+    <image src="{{logo}}" class="zpxq-sort-img fl" mode='widthFix'></image>
+    <view class="zpxq-list-text fl">
+      <view class="">{{name}}</view>
+      <view class="font22 color97">{{desc}}</view>
+    </view>
+  </view>
+  <view class="zpxq-list mgbt0 c ">
+    <view class="zpxq-title fl c">
+      <view class="">贷款要求</view>
+      <view class="color97">{{fundDemand}}</view>
+    </view>
+  </view>
+  <view class='c'>
+    <view class="tarInput">
+      <text class='textleft'>车辆成交价</text>
+      <input type="digit" placeholder="请输入贷款金额" bindinput='bindpriceInput' value='{{price}}' class='zpxq'></input>
+      <text class="zp-text">万</text>
+    </view>
+     <picker class='tarPicker' bindchange='bindPickerChange' value="{{index}}" range="{{array}}">
+    <view class='tarInput'>
+      <text>期限</text>
+      <view class='lastText'>
+        <text class='margRight20'>{{array[index]}}</text>
+        <text class='iconfont icon-right setting-icon'></text>
+      </view>
+    </view>
+    </picker>
+    <view class='tarInput'>
+      <text>利率</text>
+      <text class='lastText colorOrange'>{{monPer}}%</text>
+    </view>
+    <view class='tarInput'>
+      <text>首付</text>
+      <text class='lastText colorOrange'>{{fristprice}}万</text>
+    </view>
+     <view class='tarInput'>
+      <text>月供</text>
+      <text class='lastText colorOrange'>{{mothprice}}元</text>
+    </view>
+  
+  </view>
+</view>

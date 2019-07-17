@@ -1,0 +1,4 @@
+/* page/fsperson/fsperson.wxss */
+page{
+  background: #efeff4;
+}

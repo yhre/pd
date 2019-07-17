@@ -1,0 +1,85 @@
+
+<view class='c mrgBot30'>
+  <view class='tarInput'>
+    <text>联系人</text>
+    <input type='' bindinput="bindnameInput" value='{{name}}' maxlength="11"></input>
+  </view>
+<view class="tarInput">
+    <text>联系电话</text>
+    <input type="number" placeholder="" maxlength="11" id="tou_name" value="" bindinput="bindphoneInput" value='{{phone}}'></input>
+</view>
+<view class="tarInput">
+    <span>车行名</span>
+    <input type="text" placeholder="" id="tou_name" value="" bindinput="bindcnInput" value='{{carname}}'></input>
+</view>
+    <view class="tarInput change-cheshi" bindtap='selectChe'>
+        <text>市场</text>
+         <view class='lastText color97'>
+         <text class='margRight20'>{{mrprovice}} {{mrcity}} {{mrmarket}}</text>
+          <text class='iconfont icon-right setting-icon'></text>
+        </view>
+    </view>
+    <view class="tarInput detail-add">
+        <span>详细地址</span>
+        <textarea type="text" placeholder="请输入" value='{{detaladd}}' class='textareaIn' bindinput='detaladd' ></textarea>
+    </view>
+    <!-- <textarea class="tarInput-textarea" placeholder="详细地址" bindinput='detaladd' ></textarea> -->
+</view>
+<view class="second-input adddreCheck" >
+ <text>设为默认地址</text>
+            <checkbox-group class="radio-group checkbox-group-addresss" bindchange="checkboxChange">  
+        <label class="checkbox">  
+          <checkbox value="{{check}}" checked='true' hidden='ture'/>  
+            <block wx:if="{{check}}">
+            <image class='select' src='/images/01.png'></image>
+            </block>  
+            <block wx:else>  
+            <image class='select' src='/images/02.png'></image> 
+            </block>  
+            <text class='txt1'>{{item.name}}</text>
+        </label>  
+</checkbox-group>  
+       
+</view>
+<!--选择地址弹窗-->
+ <view class="windows {{showWin?'show':'hide'}}" style="height:{{height}}px">
+    <view class="windownCon" style='height:{{conHeight}}px'>
+        <view class="edithHead">
+            <span>选择地址</span>
+            <i class="iconfont icon-close close" bindtap='bindclose'></i>
+        </view>
+        <view class="edithItem">
+            <text class="editprovice {{item.or}}  {{item.active}}" wx:for='{{itemList}}' wx:key='' bindtap='binditem' data-id='{{index}}'>{{item.name}}</text>
+            <!-- <text class="editcity">请选择</text>
+            <text class="editmarket">请选择</text> -->
+        </view>
+        <view class="editCon">
+            <view class="proviceCon editview {{showProvice?'show':'hide'}}">
+                <view class="ul">
+                    <view  class="li {{currentTabsIndex==index?'selected':''}}" wx:for='{{proviceList}}' wx:key="{{index}}" bindtap='bindprovice' data-id='{{item.code}}' data-text='{{item.name}}' data-index='{{index}}'>
+                    <text class="name">{{item.name}}</text>
+                    <text class="iconfont tick-icon"></text>
+                    </view>
+               </view> 
+            </view>
+            <view class="cityCon editview {{showCity?'show':'hide'}}">
+                <view class="ul">
+                    <view class="li {{TabsIndexcity==index&&cityselect?'selected':''}}" wx:for="{{cityList}}" wx:key='' bindtap='bindcity' data-id='{{item.code}}' data-text='{{item.name}}' data-index='{{index}}'>
+                    <text class="name">{{item.name}}</text>
+                    <text class="iconfont tick-icon"></text>
+                    </view>
+                </view>
+            </view>
+            <view class="marketCon editview {{showMarket?'show':'hide'}}">
+                <view class="ul">
+                    <view class="li {{TabsIndexmarket==index&&marketselect?'selected':''}}" bindtap='bindmarket' wx:for="{{marketList}}" wx:key='' data-text='{{item.name}}' data-index='{{index}}' data-id='{{item.id}}'>
+                     <text class="name">{{item.name}}</text>  
+                     <text class="iconfont tick-icon"></text>
+                    </view>
+                </view>
+            </view> 
+        </view>
+    </view>
+</view> 
+
+<button class='savebtn' bindtap="saveadd">保存</button> 

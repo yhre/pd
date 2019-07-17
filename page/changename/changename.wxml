@@ -1,0 +1,8 @@
+<view class='mrg30 c containerInput'>
+  <view class='tarInput'>
+    <text>姓名</text>
+    <input type='text' placeholder='请输入姓名' value='{{name}}' bindinput='bindnameInput'></input>
+  </view>
+  
+</view>
+<button class='btn' bindtap="changename">修改</button> 
